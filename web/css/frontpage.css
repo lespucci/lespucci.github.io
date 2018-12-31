@@ -189,7 +189,7 @@ p {
 	border-left: 1px solid white;
 	padding: 0 12px;
 }
-.effekt {
+/* .effekt {
 	display: inline-block;
 	vertical-align: middle;
 	-webkit-transform: translateZ(0);
@@ -218,11 +218,11 @@ p {
 	transition-duration: 0.3s;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
-}
+} 
 .effekt:hover:before,.effekt:focus:before,.effekt:active:before {
 	left: 0;
 	right: 0;
-}
+} */
 .header{
 	height: 200px;
 	width: 100%;
@@ -743,11 +743,11 @@ textarea{
 	-moz-transition: box-shadow 0.2s ease-in;
 	transition: box-shadow 0.2s ease-in;
 }
-.moebel:hover {
+/* .moebel:hover {
 	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
 	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
-}
+} */
 .name {
 	height: auto;
 	width: 315px;
