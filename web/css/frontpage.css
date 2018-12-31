@@ -1,0 +1,1522 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+	font-family: 'DinCondesend';
+	src: url('DINPro-CondensedMedium.eot');
+	src: url('DINPro-CondensedMedium.eot?#iefix') format('embedded-opentype'),url('DINPro-CondensedMedium.woff2') format('woff2'),url('DINPro-CondensedMedium.woff') format('woff'),url('DINPro-CondensedMedium.ttf') format('truetype'),url('DINPro-CondensedMedium.svg#DINPro-CondensedMedium') format('svg');
+	font-style: normal;
+}
+::-webkit-scrollbar {
+	width: 2px;
+	height: 2px;
+	background: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb {
+	background-color: white;
+	-webkit-border-radius: 0ex;
+}
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+canvas#snowfall_canvas{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+body{
+	background: #1E2A36;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: white;
+	padding: 0;
+	margin: 0;
+	text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased !important;
+	text-rendering: optimizeLegibility !important;
+}
+body a{
+	color:#fff;
+	text-decoration: none;
+}
+p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#container {
+	position: relative;
+}
+.nav{
+	height: 55px;
+	background: #23303e;
+}
+.nav > .content{
+	min-width: 785px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.nav > .content > .colorset{
+	height: 38px;
+	width: 40px;
+	border-radius: 3px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.33);
+	margin-top: 7px;
+	margin-right: 10px;
+	float: left;
+}
+.nav > .content > .active{
+	border: 2px solid #fff;
+	margin-top: 6px;
+}
+.nav > .content > .box{
+	height: 36px;
+    background: #23303e;
+    border: 2px solid #2e3f51;
+    border-radius: 3px;
+    width: 106px;
+    margin-left: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    font-family: DinCondesend;
+    -webkit-font-smoothing: antialiased;
+    margin-top: 7px;
+    float: left;
+    padding: 0px 10px;
+    text-align: center;
+}
+.nav > .content > .box > h4{
+	margin: 0;
+}
+.nav > .content > .suche{
+	height: 40px;
+	background: #23303e;
+	border: 2px solid #2e3f51;
+	border-radius: 3px;
+	color: #ebebeb;
+	width: 500px;
+	margin-left: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-family: DinCondesend;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 7px;
+	float: left;
+	padding: 0px 10px;
+	font-size: 15px;
+}
+.nav > .content > .tap{
+	height: 40px;
+	width: 100px;
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	margin-left: 20px;
+	margin-top: 7px;
+	text-align: center;
+	line-height: 42px;
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+.nav > .content > .usermenu{
+	height: 55px;
+	min-width: 255px;
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	margin-left: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	overflow:hidden;
+}
+.nav > .content > .usermenu > .user{
+	margin-top: -10px;
+	float:left;
+	display: inline-block;
+	height: 65px;
+	width: 55px;
+}
+.nav > .content > .usermenu > .hello {
+	display: inline-block;
+	height: auto;
+	width: auto;
+	margin-top: 10px;
+}
+.nav > .content > a.button:link{
+	height: 40px;
+	width: 125px;
+	border: 2px solid #2e3f51;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 35px;
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	margin-left: 20px;
+	margin-top: 7px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 36px;
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+.subnav{
+	height: 35px;
+	background: #1e2a36;
+	color: white;
+	max-width: 960px;
+	text-transform: uppercase;
+	font-size: 17px;
+	margin: 0 auto;
+	text-align: center;
+}
+.subnav ul {
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+}
+.subnav ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 0 0px;
+	border-left: 1px solid white;
+	padding: 0 12px;
+}
+.effekt {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+	color: white;
+	line-height: 1.5;
+}
+.effekt:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	background: rgba(255,255,255,0.5);
+	height: 2px;
+	-webkit-transition-property: left, right;
+	transition-property: left, right;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.effekt:hover:before,.effekt:focus:before,.effekt:active:before {
+	left: 0;
+	right: 0;
+}
+.header{
+	height: 200px;
+	width: 100%;
+	background: url(../image/header.png) bottom center;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.header > .clear{
+	margin-top: 55px;
+}
+.header > .clear >.logo{
+	margin-left: auto;
+	margin-right: auto;
+	background: url(../image/v2.png);
+	height: 85px;
+	width: 253px;
+}
+.content{
+	width: 1080px;
+	margin: 0 auto;
+}
+.content > .alert {
+	height: auto;
+	width: 100%;
+	background: #833c3c;
+	margin-top: 25px;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #833c3c;
+	margin-bottom: 15px;
+}
+.content > .headliner{
+	font-size: 20px;
+	color: #fff;
+	float: left;
+	margin: 10px;
+	width: 100%;
+}
+.content > .contentleft{
+	width: 65%;
+	float:left;
+	padding-bottom: 100px;
+}
+.content > .contentright{
+	width: 32%;
+	float:right;
+	padding-bottom: 100px;
+}
+.content > .contentright .headliner{
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	font-size: 20px;
+	color: #fff;
+	float: left;
+	margin-top: 10px;
+}
+.content > .contentright > .box{
+	height: auto;
+	width: 100%;
+	background: #24303C;
+	margin-top: 10px;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #2E3F51;
+	margin-bottom: 5px;
+}
+textarea{
+	background: #2f3f50;
+	border:none;
+	color: white;
+	font-family: DinCondesend;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	font-size:15px;
+	min-width: 100%;
+	max-width: 100%;
+}
+.ksenden {
+	border:none;
+	font-family: DinCondesend;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	font-size:15px;
+	text-align: center;
+	background: #2f3f50;
+	color: white;
+	width: 210px;
+	margin: 10 0;
+}
+.content > .contentright > .scroll {
+	height: 170px;
+	overflow-y: scroll;
+	width: 102%;
+}
+.content > .contentright > .scroll > .kommentare {
+	width: 100%;
+	height: auto;
+	min-height: 100px;
+}
+
+.content > .contentright > .scroll > .kommentare > .user {
+	width: 60px;
+	height: 100px;
+	position: relative;
+	float: left;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase {
+	position: relative;
+	padding: 20px;
+	margin: 1em 0 3em;
+	color: #000;
+	background: #2f3f50;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#2f3f50));
+	background: -moz-linear-gradient(#f9d835, #2f3f50);
+	background: -o-linear-gradient(#f9d835, #2f3f50);
+	background: linear-gradient(#f9d835, #2f3f50);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 240px;
+	color: white;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase.pfeil {
+	margin-left: 70px;
+	background: #2f3f50;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase.pfeil > .autor {
+	font-size: 20px;
+	display:block;
+	width: 100%;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase:after {
+	content:"";
+	position:absolute;
+	bottom:-15px;
+	left:50px;
+	border-width:15px 15px 0;
+	border-style:solid;
+	border-color:#2f3f50 transparent;
+	display:block;
+	width:0;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase.pfeil > .datum {
+	font-size: 13px;
+}
+.content > .contentright > .scroll > .kommentare > .sprechblase.pfeil:after {
+	top: 16px;
+	left: -10px;
+	bottom: auto;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #303f4f;
+}
+.content > .contentright > .kommentare {
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	min-height: 100px;
+}
+
+.content > .contentright > .kommentare > .user {
+	width: 60px;
+	height: 100px;
+	position: relative;
+	float: left;
+}
+.content > .contentright > .kommentare > .sprechblase {
+	position: relative;
+	padding: 20px;
+	margin: 1em 0 3em;
+	color: #000;
+	background: #2f3f50;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#2f3f50));
+	background: -moz-linear-gradient(#f9d835, #2f3f50);
+	background: -o-linear-gradient(#f9d835, #2f3f50);
+	background: linear-gradient(#f9d835, #2f3f50);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 240px;
+	color: white;
+}
+.content > .contentright > .kommentare > .sprechblase.pfeil {
+	margin-left: 70px;
+	background: #2f3f50;
+}
+.content > .contentright > .kommentare > .sprechblase.pfeil > .autor {
+	font-size: 20px;
+	display:block;
+	width: 100%;
+}
+.content > .contentright > .kommentare > .sprechblase:after {
+	content:"";
+	position:absolute;
+	bottom:-15px;
+	left:50px;
+	border-width:15px 15px 0;
+	border-style:solid;
+	border-color:#2f3f50 transparent;
+	display:block;
+	width:0;
+}
+.content > .contentright > .kommentare > .sprechblase.pfeil > .datum {
+	font-size: 13px;
+}
+.content > .contentright > .kommentare > .sprechblase.pfeil:after {
+	top: 16px;
+	left: -10px;
+	bottom: auto;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #303f4f;
+}
+.content > .contentright > .box > .eventplan {
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	margin: 5 0;
+}
+.content > .contentright > .box > .eventplan > .uhrzeitusw {
+	padding: 4;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	margin-top: 5px;
+	text-align: center;
+	float: right;
+	margin-right: 5px;
+}
+.content > .contentright > .box > .eventplan > .veranstaltung {
+	text-align: center;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	padding: 4px;
+	margin-top:-36px;
+	text-shadow: 1px 1px 1px black;
+}
+.content > .contentright > .box > .eventhighscore {
+	height: 50px;
+	background: #2f3f50;
+	overflow: hidden;
+	padding: 5px;
+}
+.content > .contentright > .box > .eventhighscore > .platz {
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 1px;
+	float: left;
+	margin-top: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-shadow: 1px 1px 1px black;
+}
+.content > .contentright > .box > .eventhighscore > .name {
+	margin-left: 100px;
+	margin-top: 10px;
+}
+.content > .contentright > .box > .eventhighscore > .user {
+	width: 50px;
+	height: 90px;
+	margin-left: 5px;
+	float: left;
+	margin-top: -10px;
+}
+.content > .contentleft .headliner{
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-top: 10px;
+	color: #fff;
+	float: left;
+	width: 100%;
+}
+.content > .contentleft > .links {
+	height: auto;
+	width: 100%;
+}
+.content > .contentleft > .box {
+	height: auto;
+	width: 100%;
+	background: #24303C;
+	margin-top: 10px;
+	float: left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #2E3F51;
+	margin-bottom: 5px;
+    position: relative;
+}
+.content > .contentleft > .box > .news > .newspic{
+	height: 171px;
+	width: 200px;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	float: left;
+	margin-right: 10px;
+}
+.content > .contentleft > .box > .news > .headline{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	margin-top: 20px;
+	border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+	width: 400px;
+	height: 151px;
+}
+.content > .contentleft > .box > .news > .desc{
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	text-align: justify;
+	margin: 10px;
+}
+.content > .contentleft > .box > .newspic{
+	height: 171px;
+	width: 200px;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	float: left;
+	margin-right: 10px;
+}
+.content > .contentleft > .box > .headline{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+}
+.content > .contentleft > .box > .desc{
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	width: 480px;
+	max-height: 88px;
+	text-align: justify;
+}
+.content > .contentleft > .box > .tag{
+	height: 30px;
+	font-size: 15px;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	font-style: italic;
+    bottom: 20px;
+    position: absolute;
+    margin-left: 215px;
+}
+.content > .contentleft > .box > .button{
+    height: 30px;
+    width: 150px;
+    border: 2px solid #2e3f51;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 35px;
+    font-weight: 300;
+    color: #fff;
+    margin-right: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    bottom: 20px;
+    position: absolute;
+    margin-left: 525px;
+}
+.content > .contentleft > .halbbox{
+	width: 47%;
+	display:inline-block;
+}
+.content > .contentleft > .halbbox > .box{
+	height: auto;
+	width: 100%;
+	background: #24303C;
+	margin-top: 10px;
+	float: left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #2E3F51;
+	margin-bottom: 5px;
+}
+.content > .contentleft > .halbbox > .box > .headline{
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.content > .contentleft > .halbbox > .box > .newbadge{
+	height: 60px;
+	width: 60px;
+	background: #833c3c;
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	margin-right: 4px;
+}
+.content > .contentleft > .halbbox > .box > .newbadge > .badge{
+	height: 50px;
+	width: 50px;
+	float:left;
+	margin-top: 5px;
+	margin-left: 5px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.content > .contentleft > .halbbox > .box > .newpreis{
+	height: 40px;
+	width: 40px;
+	background: #313131;
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	margin-right: 4px;
+}
+.content > .contentleft > .halbbox > .box > .newpreis > .mob{
+	height: 31px;
+	width: 30px;
+	margin-top: auto;
+	margin-left: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+}
+.content > .contentleft > .halbbox > .box > .newpreis > .color{
+	height: 20px;
+	width: 100%;
+	float: left;
+	margin-top: 4px;
+	text-align: center;
+	color: white;
+}
+.content > .contentleft > .box > .team {
+	background: url(http://hubbafever.de/web/image/furni.png) center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 185px;
+	width: 140px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 10px 4.25px 0px 4.25px;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.content > .contentleft > .box > .team:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.content > .contentleft > .box > .team > .image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+}
+@keyframes pop{
+	50% {
+		transform: scale(1.2);
+	}
+}
+.content > .contentleft > .box > .team > .image:hover{
+	animation: pop 0.3s linear 1;
+}
+.content > .contentleft > .box > .team > .name {
+	height: auto;
+	width: 140px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+}
+.content > .contentleft > .box > .team > .rang {
+	font-size: 20px;
+	position: absolute;
+	width: 140px;
+	margin-top: -30px;
+	text-align: center;
+}
+.content > .contentleft > .box > .eventplan {
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	margin: 5 0;
+}
+.content > .contentleft > .box > .eventplan > .uhrzeitusw {
+	padding: 4;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	margin-top: 5px;
+	text-align: center;
+	float: right;
+	margin-right: 5px;
+}
+.content > .contentleft > .box > .eventplan > .veranstaltung {
+	text-align: center;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	padding: 4px;
+	margin-top:-36px;
+	text-shadow: 1px 1px 1px black;
+}
+.moebel {
+	background:url('http://hubbafever.de/web/image/furni.png') center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 30%;
+	width: 30%;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	margin: 0.75rem;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.moebel:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.name {
+	height: auto;
+	width: 315px;
+	padding: 10px 0;
+	position: absolute;
+	text-align: center;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.name1 {
+	height: auto;
+	width: 324px;
+	padding: 10px 0;
+	position: absolute;
+	text-align: center;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	font-size: 20px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.image:hover {
+	animation: pop 0.3s linear 1;
+}
+.preis {
+	z-index: 2;
+	position: absolute;
+	width: 315px;
+	padding: 0.5rem 0;
+	margin-top: -46px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.preis1 {
+	z-index: 2;
+	font-size: 20px;
+	position: absolute;
+	width: 324px;
+	padding: 0.5rem 0;
+	margin-top: -46px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.change {
+	position: relative;
+	z-index: 5;
+	height: 5px;
+	width: 100%;
+	margin-top: -5px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	opacity: 0.65;
+}
+.kategoriebutton {
+	background: url(http://hubbafever.de/web/image/furni.png) center center;
+	height: 40px;
+	width: 125px;
+	border: 2px solid #2e3f51;
+	text-shadow: 1px 1px 1px black;
+	border-radius: 35px;
+	font-size: 17px;
+	color: #fff;
+	margin: 10px 15px;
+	padding: 4px 7px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	float: left;
+	text-align: center;
+}
+
+.material-icons {
+	vertical-align: text-bottom
+}
+
+.kategorienansicht,
+.lastPriceListChanges {
+	width: 100%;
+	margin: 20px 0
+}
+
+.kategorienansicht {
+	height: 215px;
+	overflow-y:scroll
+}
+
+.kategorienansicht > .wrapper {
+	width: 98%
+}
+
+.lastPriceListChanges > .wrapper {
+	width: 97%
+}
+
+.kategorienansicht > .wrapper,
+.lastPriceListChanges > .wrapper {
+	margin: 0 auto
+}
+
+.kategoriebutton > .image {
+}
+.content > .preisliste {
+	width: auto;
+	height: auto;
+}
+.content > .preisliste > .moebel {
+	background:url('http://hubbafever.de/web/image/furni.png') center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 200px;
+	width: 225px;
+	border-radius: 5px;
+	display: inline-block;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+     margin: 0.75rem;
+}
+.content > .preisliste > .moebel:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.content > .preisliste > .moebel > .image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.content > .preisliste > .moebel > .image:hover {
+	animation: pop 0.3s linear 1;
+}
+.content > .preisliste > .moebel > .name {
+	height: auto;
+	width: 225px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.content > .preisliste > .moebel > .change {
+	height: 10px;
+	width: 100%;
+	margin-top: -10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.content > .preisliste > .moebel > .preis {
+	font-size: 20px;
+	position: absolute;
+	width: 225px;
+	margin-top: -50px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.content > .preisliste > .box {
+	height: 200px;
+	width: 380px;
+	background: #24303C;
+    margin: 0.75rem;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #2E3F51;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	overflow:hidden;
+
+}
+.content > .preisliste > .box > .textfeld1 {
+	height: auto;
+	width: auto;
+	background: #24303C;
+	padding: 4px;
+}
+.content > .preisliste > .box > .textfeld2 {
+	height: auto;
+	width: auto;
+	background: #2f3f50;
+	padding: 4px;
+}
+.red{
+	background: #833c3c;
+}
+.darkblue{
+	background: #23303e;
+}
+.green{
+	background: #3c8376;
+}
+.orange{
+	background: #a9733c;
+}
+.white{
+	background: #fff;
+}
+footer{
+	bottom: 0;
+	height: 60px;
+	width: 100%;
+	float:left;
+	background:#23303e;
+}
+footer > .inhalt{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer > .inhalt > .text{
+	font-size: 14px;
+	font-weight: 300;
+	color: #ffffff;
+	float: left;
+	margin-top: 15px;
+}
+footer > .inhalt > .textright{
+	font-size: 14px;
+	color: #ffffff;
+	float: right;
+	margin-top: 22px;
+	margin-left: 10px;
+}
+.content > .contentleft > .rareshop {
+	width: auto;
+	height: auto;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+.content > .contentleft > .rareshop > .moebel {
+	background:url('http://hubbafever.de/web/image/furni.png') center center no-repeat, #23303e;
+	border-left:2px solid #2e3f51;
+	border-top:2px solid #2e3f51;
+	border-right:2px solid #2e3f51;
+	height: 220px;
+	width: 195px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 10px 4.25px 0px 4.25px;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.content > .contentleft > .rareshop > .moebel:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.content > .contentleft > .rareshop > .moebel > .image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.content > .contentleft > .rareshop > .moebel > .image:hover {
+	animation: pop 0.3s linear 1;
+}
+.content > .contentleft > .rareshop > .moebel > .name {
+	height: auto;
+	width: 225px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+	z-index: 2;
+}
+.content > .contentleft > .rareshop > .moebel > .buy {
+	height: 30px;
+	width: 199px;
+	margin-left: -2px;
+	margin-top: -10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #3c8376;
+	text-align: center;
+	font-size: 24px;
+}
+.content > .contentright > .rareshop > .moebel > .preis {
+	font-size: 20px;
+	position: absolute;
+	width: 225px;
+	margin-top: -50px;
+	text-align: center;
+}
+.content > .contentright > .box > .loginimage {
+	height: 30px;
+	width: 30px;
+	float: left;
+	display: inline-block;
+}
+.content > .contentleft > .box > form > .loginimage {
+    height: 55px;
+    width: 55px;
+    float: left;
+    display: inline-block;
+    margin-left: 20px;
+}
+.textfeld {
+	height: 40px;
+	background: #23303e;
+	border: 2px solid #2e3f51;
+	border-radius: 3px;
+	color: #ebebeb;
+	width: 500px;
+	margin-left: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-family: DinCondesend;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 7px;
+	float: left;
+	padding: 0px 10px;
+	font-size: 15px;
+}
+input[type=submit] {
+	cursor: pointer;
+	width: 100%;
+	border: 2px solid #2e3f51;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 35px;
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	margin: 40px 0;
+	padding: 7px 0;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 20px;
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+.content > .contentleft > .box > .newbadge{
+	height: 60px;
+	width: 60px;
+	background: #833c3c;
+	float: left;
+	margin-left: 9px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+}
+.content > .contentleft > .box > .newbadge > .badge{
+	height: 50px;
+	width: 50px;
+	float:left;
+	margin-top: 5px;
+	margin-left: 5px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.content > .suche {
+	height: auto;
+	width: auto;
+}
+.content > .suche > .user {
+	background: url(http://hubbafever.de/web/image/furni.png) center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 185px;
+	width: 140px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 10px 4.25px 0px 4.25px;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.content > .suche > .user:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.content > .suche > .user > .image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+}
+.content > .suche > .user > .image:hover{
+	animation: pop 0.3s linear 1;
+}
+.content > .suche > .user > .name {
+	height: auto;
+	width: 140px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+}
+.content > .suche > .box {
+	height: auto;
+	width: 100%;
+	background: #24303C;
+	margin-top: 10px;
+	float: left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #2E3F51;
+	margin-bottom: 5px;
+}
+.content > .suche > .box > .news > .newspic{
+	height: 171px;
+	width: 200px;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	float: left;
+	margin-right: 10px;
+}
+.content > .suche > .box > .news > .headline{
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	margin-top: 20px;
+	border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+	width: 400px;
+	height: 151px;
+}
+.content > .suche > .box > .news > .desc{
+	font-family: DinCondesend;
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	text-align: justify;
+	-webkit-font-smoothing: antialiased;
+	margin: 10px;
+}
+.content > .suche > .box > .newspic{
+	height: 171px;
+	width: 200px;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	float: left;
+	margin-right: 10px;
+}
+.content > .suche > .box > .headline{
+	width: 245px;
+	font-size: 20px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+}
+.content > .suche > .box > .desc{
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	float: left;
+	width: 245px;
+	text-align: justify;
+	max-height: 70px;
+	overflow: hidden;
+}
+.content > .suche > .box > .tag{
+	height: 30px;
+	font-size: 15px;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+	margin-top: 10px;
+	border-radius: 2px;
+	font-style: italic;
+}
+.content > .suche > .box > .button{
+	height: 30px;
+	width: 150px;
+	border: 2px solid #2e3f51;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 35px;
+	font-weight: 300;
+	color: #fff;
+	float: right;
+	margin-right: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 30px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.content > .suche > .box > .newbadge{
+	height: 60px;
+	width: 60px;
+	background: #833c3c;
+	float: left;
+	margin-left: 9px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+}
+.content > .suche > .box > .newbadge > .badge{
+	height: 50px;
+	width: 50px;
+	float:left;
+	margin-top: 5px;
+	margin-left: 5px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.content > .suche > .moebel {
+	background:url('http://hubbafever.de/web/image/furni.png') center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 200px;
+	width: 225px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 30.25px 30.25px 0px 10.25px;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.content > .suche > .moebel:hover {
+	-moz-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+	box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
+}
+.content > .suche > .moebel > .name {
+	height: auto;
+	width: 225px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.content > .suche > .moebel > .image {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.content > .suche > .moebel > .image:hover {
+	animation: pop 0.3s linear 1;
+}
+.content > .suche > .moebel > .preis {
+	z-index: 2;
+	font-size: 20px;
+	position: absolute;
+	width: 225px;
+	margin-top: -50px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.content > .suche > .moebel > .change {
+	position: relative;
+	z-index: 5;
+	height: 10px;
+	width: 100%;
+	margin-top: -10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.user {
+	width: auto;
+	height: auto;
+}
+.user > .header {
+	background: url('https://img00.deviantart.net/c42c/i/2016/051/f/6/habbo_pixelart___at_the_beach_by_zapphyre-d9sh6uw.png') center center;
+	height: 200px;
+	width: 100%;
+	border-radius: 5px;
+}
+.user > .header > .userimage {
+	width: 120px;
+	height: 120px;
+	border: 2px solid #24303C;
+	text-align: center;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+	position: relative;
+	float: left;
+	margin-left: 5px;
+	margin-top: 76px;
+}
+.user > .header > .name {
+	background: #24303C;
+	width: auto;
+	height: 30px;
+	margin-top: 158px;
+	position: relative;
+	float: left;
+	color: white;
+	border: 2px solid #24303C;
+	text-align: center;
+	font-size: 25px;
+	min-width: 250px;
+	border-top-right-radius: 5px;
+	padding: 4px;
+}
+.rareshopmoebel {
+	background: url(http://hubbafever.de/web/image/furni.png) center center no-repeat, #23303e;
+	border: 2px solid #2e3f51;
+	height: 225px;
+	width: 195px;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 10px 4.25px 72px 23.25px;
+	-webkit-transition: box-shadow 0.2s ease-in;
+	-moz-transition: box-shadow 0.2s ease-in;
+	transition: box-shadow 0.2s ease-in;
+}
+.rareshopname {
+	height: auto;
+	width: 195px;
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 5px;
+	z-index: 2;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.rareshopimage {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.rareshoppreis {
+	z-index: 2;
+	font-size: 20px;
+	position: absolute;
+	width: 195px;
+	margin-top: -60px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.rareshoptextdrunterinfo {
+	z-index: 2;
+	font-size: 20px;
+	position: absolute;
+	width: 195px;
+	margin-top: -30px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px black;
+}
+.rareshopzweiinputdinger {
+	width: 195px;
+	height: 44px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	display:inline-block;
+}
+.rareshopauswahlfelddingsbums{
+	height: 40px;
+	width: 95px;
+	border: 2px solid #2e3f51;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 35px;
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	margin-top: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 20px;
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiasedmargin-bottom: 10px;
+}
+.rareshopauswahlfelddingsbums > .nebendrantext {
+	float:right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.shopcontent > .alert {
+	height: auto;
+	width: 100%;
+	background: #833c3c;
+	margin-top: 25px;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #833c3c;
+	margin-bottom: 15px;
+}
+.shopcontent > .alertgood {
+	height: auto;
+	width: 100%;
+	background: #43833c;
+	margin-top: 25px;
+	float:left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: 2px solid #43833c;
+	margin-bottom: 15px;
+}
+input[type=number] {
+	margin-left: 10px;
+	height: 40px;
+	width: 30px;
+	background: rgba(255, 255, 255, 0);
+	font-size: 17px;
+	color: #fff;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	font-family: DinCondesend;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	border:none;
+}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+	opacity: 1;
+}
+input[type=number]::-webkit-inner-spin-button {
+	cursor:pointer;
+	display:block;
+	width:8px;
+	color: #333;
+	text-align:center;
+	position:relative;
+}
+input[type=number]:hover::-webkit-inner-spin-button {
+	background:url('http://hubbafever.de/uploads2/file_1299.png') no-repeat 50% 50%;
+	width: 9px;
+	height: 16px;
+	position: relative;
+}
+
+input[type=text] {
+	height: 40px;
+	background: #23303e;
+	border: 2px solid #2e3f51;
+	border-radius: 3px;
+	color: #ebebeb;
+	width: 500px;
+	margin-left: 10px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	font-family: DinCondesend;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 7px;
+	float: left;
+	padding: 0px 10px;
+	font-size: 15px;
+}
