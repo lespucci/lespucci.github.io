@@ -842,7 +842,6 @@ textarea{
 .kategorienansicht,
 .lastPriceListChanges {
 	width: 100%;
-	margin: 20px 0
 }
 
 .kategorienansicht {
@@ -858,10 +857,10 @@ textarea{
 	width: 97%
 }
 
-.kategorienansicht > .wrapper,
+/* .kategorienansicht > .wrapper,
 .lastPriceListChanges > .wrapper {
 	margin: 0 auto
-}
+} */
 
 .kategoriebutton > .image {
 }
@@ -967,10 +966,11 @@ textarea{
 }
 footer{
 	bottom: 0;
-	height: 60px;
+	height: 50px;
 	width: 100%;
 	float:left;
 	background:#23303e;
+	margin-top: 100px;
 }
 footer > .inhalt{
 	width: 960px;
