@@ -757,7 +757,7 @@ textarea{
 } */
 .name {
 	height: auto;
-	width: 315px;
+	width: 314px;
 	padding: 10px 0;
 	position: absolute;
 	text-align: center;
@@ -794,7 +794,7 @@ textarea{
 .preis {
 	z-index: 2;
 	position: absolute;
-	width: 315px;
+	width: 314px;
 	padding: 0.5rem 0;
 	margin-top: -44px;
 	text-align: center;
