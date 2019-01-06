@@ -135,16 +135,15 @@ p {
 .nav > .content > .usermenu{
 	height: 55px;
 	min-width: 255px;
-	font-size: 17px;
+	font-size: 15px;
 	color: #fff;
 	float: left;
-	margin-left: 20px;
+	margin-left: 40px;
 	text-align: center;
-	text-transform: uppercase;
 	overflow:hidden;
 }
 .nav > .content > .usermenu > .user{
-	margin-top: -10px;
+	margin-top: -17px;
 	float:left;
 	display: inline-block;
 	height: 65px;
@@ -154,7 +153,8 @@ p {
 	display: inline-block;
 	height: auto;
 	width: auto;
-	margin-top: 10px;
+	margin-top: 15px;
+	margin-left: 10px;
 }
 .nav > .content > a.button:link{
 	height: 40px;
