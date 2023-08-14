@@ -137,15 +137,22 @@
 }
 
 .online_user div {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 42px;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    /* background-size: 33px 56px; */
+        position: absolute;
+        left: 10px; /* Anpassung des linken Abstands */
+        top: 50%; /* Setzt den oberen Abstand auf 50% */
+        transform: translateY(-50%); /* Zentriert das Element vertikal */
+        width: 42px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center center;
 }
+
+    .online_user span {
+        position: absolute;
+        left: 60px; /* Anpassung des linken Abstands für den Text */
+        top: 50%; /* Setzt den oberen Abstand auf 50% */
+        transform: translateY(-50%); /* Zentriert das Element vertikal */
+    }
     
 	
 	.roundChatbox {
