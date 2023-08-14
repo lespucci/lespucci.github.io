@@ -302,46 +302,11 @@
     <div id="online_viewer_inner">
         <p>
             <b>Unser Team</b></p>
-
-<a class="online_user" href="#" id="aztecLink">
-    <div style="background-image: url();"></div>aztec
-</a>
-<a class="online_user" href="#" id="mandaraLink">
-    <div style="background-image: url();"></div>mandara
-</a>
-
-<script>
-    // Funktion, die das Hintergrundbild aktualisiert
-    function updateBackgroundImage(figure, linkElementId) {
-        // API-Link mit dem angegebenen Namen erstellen
-        const apiLink = `https://json.hubba.cc/user.php?name=${figure}`;
-
-        // API-Anfrage senden
-        fetch(apiLink)
-            .then(response => response.json())
-            .then(data => {
-                // JSON-Daten verarbeiten und die "figure" erhalten
-                const figureString = data.figure;
-
-                // Bild-URL erstellen
-                const imageUrl = `https://imager.hubba.cc/avatarimage?figure=${figureString}`;
-
-                // Link-Element auswählen und das Hintergrundbild aktualisieren
-                const linkElement = document.getElementById(linkElementId);
-                linkElement.style.backgroundImage = `url(${imageUrl})`;
-            })
-            .catch(error => {
-                console.error('Fehler bei der API-Anfrage:', error);
-            });
-    }
-
-    // Hier kannst du die gewünschten "figure" und die IDs der Link-Elemente einstellen
-    const desiredFigureAztec = "aztec";
-    const desiredFigureMandara = "mandara";
-
-    updateBackgroundImage(desiredFigureAztec, 'aztecLink'); // 'aztecLink' ist die ID des aztec-Link-Elements
-    updateBackgroundImage(desiredFigureMandara, 'mandaraLink'); // 'mandaraLink' ist die ID des mandara-Link-Elements
-</script>
+       
+		   <a class="online_user" href="#">
+            <div style="background-image: url(https://hubbawert.us/imager/aztec);"></div>aztec        </a>
+		   <a class="online_user" href="#">
+            <div style="background-image: url(https://hubbawert.us/imager/mandara);"></div>mandara        </a>
 		   
 		   
 		   

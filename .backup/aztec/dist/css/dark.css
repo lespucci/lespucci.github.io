@@ -1,0 +1,91 @@
+	.bg-light {
+		background: #2d2d2d !important;
+	}
+	.card-body {
+		background-color: #363636!important;
+	}
+	.card-header {
+		background-color: #1e1e1e;
+		color: white;
+		border-bottom: none !important; 
+	}
+	.card {
+		border: none; 
+		color: white 
+	}
+	.box-shadow {
+		box-shadow: none !important;
+	}
+	.outline-plus {
+		color:white;
+	}
+	.outline-minus {
+		color:white; 
+	}
+	.bg-purple {
+		background-color: #111111;
+	}
+	#online_viewer {
+		width: 100%;
+		background-color: #1e1e1e;
+	}
+	#footer {
+		    background-color: #111111;
+	}
+	.online_user {
+		background-color: #111111
+	}
+	.jumbotron {
+		background: url(/images/bg_stars.png?v=1) repeat-x center 0px !important;
+	/*	background-color: #596275!important; /* #292929  !important; */
+		min-height: 250px !important; 
+	}
+	.btn-outline-primary {
+		color:white;
+	}
+	.badge {
+		color:white; 
+	}
+	.nav-scroller.bg-white {
+		background-color: #2d2d2d !important; 
+		border-bottom: 1px solid #ffffff0f
+	}
+	.nav-underline .active {
+		color: #6eaeef;
+	}
+	.bg-dark {
+		background-color: #1e1e1e !important;
+	}
+	.kommentareSection .card-body {  background-color: #363636 !important }
+	.furniSection .card-body {  background-color: #363636 !important; color: white }
+	.furniSection .table-striped { color: white; } 
+	#add_to_inv {
+		margin-top:10px; 
+	}
+	.table-striped { color: black; } 
+	
+	.commentbox:nth-child(odd) {
+		background: #1e1e1e;
+	}
+.commentbox {
+    padding-left: 25px;
+    padding-top: 15px;
+    margin: 0px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    background: #363636;
+    margin-top: -15px;
+}	
+body { 
+color:white; } 
+.regCard {
+	background: #111111
+}
+.pn_message_div {     background-color: #111111; } 
+.card-body1 {     background: #2d2d2d; }
+.card-body1 .table-striped { color: white; } 
+.pn_message_div:nth-child(even) {
+    background-color: #1e1e1e;
+}
+.pn_username { color:white; } 
+.team_member { border:none; } 
